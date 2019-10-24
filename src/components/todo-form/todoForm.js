@@ -12,7 +12,7 @@ export default {
   },
   data: function () {
     return {
-      formTitle: this.modalType === 'add' ? 'Add todo' : 'Edit todo',
+      formTitle: this.modalType === 'add' ? 'Add task' : 'Edit task',
       title: this.setValue('title'),
       description: this.setValue('description'),
       todoDate: this.setValue('todoDate'),

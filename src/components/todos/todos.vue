@@ -2,7 +2,7 @@
   <section class="todoapp">
     <!-- header -->
     <header class="header">
-      <h3>todos</h3>
+      <h3>PawaTask</h3>
 
       <div class="add-todo">
         <label>Title</label>
@@ -13,7 +13,7 @@
                @keyup.enter="addTodo">
       </div>
 
-      <button type="button" class="btn-new-todo" @click="showForm">Add todo</button>
+      <button type="button" class="btn-new-todo" @click="showForm">Add task</button>
 
     </header>
 
