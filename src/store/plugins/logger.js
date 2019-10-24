@@ -1,4 +1,3 @@
-
 import { deepCopy } from '../../utils/object';
 
 export default function createLogger ({

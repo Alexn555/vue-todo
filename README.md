@@ -36,6 +36,8 @@ Manual
 
 ```
  ChangeLog:
+   v 1.0.1 - Improved logic: transferred app logic now to todos component
+             Removed unnecessary logic
    v 1.0.0 - Base version
 ```
 
@@ -54,6 +56,7 @@ Manual
           app / main component
           comments / - comments component,
             features: shows comments, add comment
+          todos / - todos component, that contains showing all todo items logic
           todo / - todo item component
             features: show exact todo item (title) with control buttons: Edit, Remove, Commments
             shows / hides Edit form, toggles Comments section
@@ -79,9 +82,9 @@ Manual
 
     Features
      You can add, edit todos, add comments
-	
+
     Best viewed in latest Chrome, Firefox.
-	 
+
 ```
 
 ### Customize configuration
