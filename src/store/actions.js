@@ -1,9 +1,9 @@
 import { getRandomInt } from '../utils/number';
 
 export default {
-  addTodo ({ commit }, { title, description, todoDate, priorityLevel, comments }) {
+  addTask ({ commit }, { title, description, todoDate, priorityLevel, comments }) {
     const id = getRandomInt(1, 10000);
-    commit('addTodo', {
+    commit('addTask', {
       id,
       title,
       description,
@@ -13,19 +13,19 @@ export default {
       done: false
     });
   },
-  removeTodo ({ commit }, todo) {
-    commit('removeTodo', todo);
+  removeTask ({ commit }, task) {
+    commit('removeTask', task);
   },
-  editTodo ({ commit }, { todo, id, title, description, todoDate, priorityLevel }) {
-    commit('editTodo', { todo, id: id,
+  editTask ({ commit }, { task, id, title, description, todoDate, priorityLevel }) {
+    commit('editTask', { task, id: id,
       title: title,
       description: description,
       todoDate: todoDate,
       priorityLevel: priorityLevel });
   },
-  addComment ({ commit }, { todoId, author, comment, commentDate }) {
+  addComment ({ commit }, { taskId, author, comment, commentDate }) {
     commit('addComment', {
-      todoId,
+      taskId,
       author,
       comment,
       commentDate

@@ -49,7 +49,7 @@
             <footer class="modal-footer">
                 <slot name="footer" >
                     <button type="button" class="btn-green" aria-label="Close modal"
-                            @click="saveTodo()">
+                            @click="saveTask()">
                         Save
                     </button>
                 </slot>
@@ -59,5 +59,5 @@
    </transition>
 </template>
 
-<script lang="js" src="./todoForm.js"></script>
-<style lang="scss" src="./todoForm.scss"></style>
+<style lang="scss" src="./taskForm.scss"></style>
+<script lang="js" src="./taskForm.js"></script>

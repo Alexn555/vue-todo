@@ -4,7 +4,7 @@ import { createDate } from '../../utils/date';
 export default {
   name: 'Comments',
   props: {
-    todoItem: Object
+    taskItem: Object
   },
   data () {
     return {
@@ -19,18 +19,23 @@ export default {
     ]),
 
     onAddComment (e) {
-      const { todoItem } = this;
-      if (todoItem && todoItem.id) {
+      const { taskItem } = this;
+      if (taskItem && taskItem.id) {
         const commentObj = {
-          todoId: this.todoItem.id,
+          taskId: this.taskItem.id,
           author: this.commentAuthor,
           comment: this.commentBody,
           commentDate: createDate()
         };
         this.addComment(commentObj);
+        this.clearFields();
       }
+    },
+    clearFields () {
+      this.commentAuthor = '';
+      this.commentBody = '';
+      this.commentDate = '';
     }
-
   }
 
 };

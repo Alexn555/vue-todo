@@ -36,6 +36,7 @@ Manual
 
 ```
  ChangeLog:
+   v 1.1.0 - Total name change, changed todo name to task which more semantically correct
    v 1.0.1 - Improved logic: transferred app logic now to todos component
              Removed unnecessary logic
    v 1.0.0 - Base version
@@ -43,10 +44,10 @@ Manual
 
 ```
  Plot
-  Classic vuejs javascript TODO application that allows to create,
-  edit todos and add comments to them using. Vuex is used for states.
+  Classic vuejs javascript Tasks application that allows to create,
+  edit tasks and add comments to them using. Vuex is used for states.
 
-  Info:  To view todo item with all information double-click on Todo item.
+  Info:  To view task item with all information double-click on Task item.
 
   External libraries: Vuejs, Vuex, Masked-Input (for date picker), Sass-loader,
   https://niksmr.github.io/vue-masked-input/
@@ -56,11 +57,11 @@ Manual
           app / main component
           comments / - comments component,
             features: shows comments, add comment
-          todos / - todos component, that contains showing all todo items logic
-          todo / - todo item component
-            features: show exact todo item (title) with control buttons: Edit, Remove, Commments
+          tasks / - tasks component, that contains showing all task items logic
+          task / - task item component
+            features: show exact task item (title) with control buttons: Edit, Remove, Commments
             shows / hides Edit form, toggles Comments section
-          todo-form / - Todo Item form
+          task-form / - Task Item form
              features: validates, add, edit (sends to vuex actions)
           all components are divided:
            file.vue (template and includes), file.ts - script, file.scss - style
@@ -81,7 +82,7 @@ Manual
 
 
     Features
-     You can add, edit todos, add comments
+     You can add, edit tasks, add comments
 
     Best viewed in latest Chrome, Firefox.
 

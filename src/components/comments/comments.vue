@@ -4,7 +4,7 @@
 
       <section>
           <ul class="comments"
-              v-for="(comment, index) in todoItem.comments"
+              v-for="(comment, index) in taskItem.comments"
               :key="index">
               <li>
                   <div class="comment-header">

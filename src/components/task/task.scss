@@ -1,0 +1,40 @@
+@import '../themes/theme-main';
+@import '../themes/theme-main-colors';
+
+.task {
+  @extend .common-section;
+  background-color: #f2f2f2;
+  border: 1px;
+  padding: 15px;
+  width: 92%;
+}
+
+.task-btn {
+  border: none;
+  margin: 0 10px 0 10px;
+  cursor: pointer;
+  font-weight: bold;
+  color: $mainColor;
+  background: transparent;
+}
+
+.task-item-remove {
+  @extend .task-btn;
+}
+
+.task-item-edit {
+  @extend .task-btn;
+}
+
+.task-title {
+  padding: 20px;
+}
+
+.task-item-edit {
+  margin: 10px;
+}
+
+.task-item-remove {
+  font-size: 13px;
+}
+

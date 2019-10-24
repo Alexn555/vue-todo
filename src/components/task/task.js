@@ -1,15 +1,14 @@
 import { mapActions } from 'vuex';
-import TodoForm from '../todo-form/todoForm.vue';
+import TaskForm from '../task-form/taskForm.vue';
 import Comments from '../comments/comments.vue';
 
 export default {
-  components: { TodoForm, Comments },
-  name: 'Todo',
-  props: ['todo'],
+  components: { TaskForm, Comments },
+  name: 'TaskItem',
+  props: ['task'],
 
   data () {
     return {
-      editing: false,
       isModalVisible: false,
       isCommentsVisible: false
     };
@@ -27,32 +26,24 @@ export default {
 
   methods: {
     ...mapActions([
-      'removeTodo'
+      'removeTask'
     ]),
 
     doneEdit (e) {
       const title = e.target.value.trim();
-      const { todo } = this;
+      const { task } = this;
       if (!title) {
-        this.removeTodo(todo);
-      } else if (this.editing) {
-        this.editing = false;
+        this.removeTask(task);
       }
     },
 
     toggleComments () {
       this.isCommentsVisible = !this.isCommentsVisible;
     },
-    showComments (item) {
-      this.isCommentsVisible = true;
-    },
-    closeComments () {
-      this.isCommentsVisible = false;
-    },
-    showModal () {
+    showForm () {
       this.isModalVisible = true;
     },
-    closeModal () {
+    closeForm () {
       this.isModalVisible = false;
     }
   }

@@ -1,5 +1,5 @@
 <template>
-  <Todos/>
+  <Tasks/>
 </template>
 
 <style lang="scss" src="./app.scss"></style>

@@ -2,7 +2,7 @@ import { mapActions } from 'vuex';
 import MaskedInput from 'vue-masked-input';
 
 export default {
-  name: 'modal',
+  name: 'TaskForm',
   props: {
     modalType: String,
     formObject: Object
@@ -21,7 +21,7 @@ export default {
   },
   methods: {
     ...mapActions([
-      'editTodo'
+      'editTask'
     ]),
     setValue (key) {
       return this.formObject && this.formObject[key] !== '' ? this.formObject[key] : '';
@@ -29,18 +29,18 @@ export default {
     close () {
       this.$emit('close');
     },
-    saveTodo: function () {
+    saveTask: function () {
       if (this.isValidForm(this.title, this.description)) {
-        const methodType = this.modalType === 'add' ? 'addTodo' : 'editTodo';
+        const methodType = this.modalType === 'add' ? 'addTask' : 'editTask';
 
         if (this.modalType === 'edit') {
-          const todo = this.formObject;
-          const id = todo.id;
+          const task = this.formObject;
+          const id = task.id;
           const title = this.title;
           const description = this.description;
           const todoDate = this.todoDate;
           const priorityLevel = this.priorityLevel;
-          this.editTodo({ todo, id, title, description, todoDate, priorityLevel });
+          this.editTask({ task, id, title, description, todoDate, priorityLevel });
         } else {
           const addObj = {
             title: this.title,

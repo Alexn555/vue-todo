@@ -1,23 +1,23 @@
-import TodoItem from '../todo/todoItem.vue';
-import TodoForm from '../todo-form/todoForm.vue';
+import TaskItem from '../task/task.vue';
+import TaskForm from '../task-form/taskForm.vue';
 
 export default {
-  components: { TodoItem, TodoForm },
+  name: 'Tasks',
+  components: { TaskItem, TaskForm },
   data () {
     return {
-      visibility: 'all',
       isModalVisible: false
     };
   },
 
   computed: {
-    todos () {
-      return this.$store.state.todos;
+    tasks () {
+      return this.$store.state.tasks;
     }
   },
 
   methods: {
-    addTodo (e) {
+    addTask (e) {
       const title = e.target.value;
       if (title.trim()) {
         const addObj = {
@@ -27,7 +27,7 @@ export default {
           priorityLevel: '',
           comments: []
         };
-        this.$store.dispatch('addTodo', addObj);
+        this.$store.dispatch('addTask', addObj);
       }
       e.target.value = '';
     },

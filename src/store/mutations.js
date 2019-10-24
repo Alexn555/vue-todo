@@ -1,4 +1,4 @@
-export const STORAGE_KEY = 'todos-vuejs';
+export const STORAGE_KEY = 'tasks-vuejs';
 
 // for testing
 if (navigator.userAgent.indexOf('PhantomJS') > -1) {
@@ -6,40 +6,40 @@ if (navigator.userAgent.indexOf('PhantomJS') > -1) {
 }
 
 export const mutations = {
-  addTodo (state, todo) {
-    state.todos.push(todo);
+  addTask (state, task) {
+    state.tasks.push(task);
   },
 
-  removeTodo (state, todo) {
-    state.todos.splice(state.todos.indexOf(todo), 1);
+  removeTask (state, task) {
+    state.tasks.splice(state.tasks.indexOf(task), 1);
   },
 
-  editTodo (state, { todo,
-    id = todo.id,
-    title = todo.title,
-    description = todo.description,
-    todoDate = todo.todoDate,
-    priorityLevel = todo.priorityLevel
+  editTask (state, { task,
+    id = task.id,
+    title = task.title,
+    description = task.description,
+    todoDate = task.todoDate,
+    priorityLevel = task.priorityLevel
   }) {
-    todo.title = title;
-    todo.description = description;
-    todo.todoDate = todoDate;
-    todo.priorityLevel = priorityLevel;
+    task.title = title;
+    task.description = description;
+    task.todoDate = todoDate;
+    task.priorityLevel = priorityLevel;
     // save in storage
-    for (let i = 0; i < state.todos.length; i++) {
-      if (state.todos[i].id === id) {
-        state.todos[i].title = title;
-        state.todos[i].description = description;
-        state.todos[i].todoDate = todoDate;
-        state.todos[i].priorityLevel = priorityLevel;
+    for (let i = 0; i < state.tasks.length; i++) {
+      if (state.tasks[i].id === id) {
+        state.tasks[i].title = title;
+        state.tasks[i].description = description;
+        state.tasks[i].todoDate = todoDate;
+        state.tasks[i].priorityLevel = priorityLevel;
       }
     }
   },
 
   addComment (state, comment) {
-    for (let i = 0; i < state.todos.length; i++) {
-      if (state.todos[i].id === comment.todoId) {
-        state.todos[i].comments.push(comment);
+    for (let i = 0; i < state.tasks.length; i++) {
+      if (state.tasks[i].id === comment.taskId) {
+        state.tasks[i].comments.push(comment);
       }
     }
   }

@@ -62,23 +62,6 @@
   width: 100px;
 }
 
-.todo-btn {
-  border: none;
-  margin: 0 10px 0 10px;
-  cursor: pointer;
-  font-weight: bold;
-  color: $mainColor;
-  background: transparent;
-}
-
-.todo-item-remove {
-  @extend .todo-btn;
-}
-
-.todo-item-edit {
-  @extend .todo-btn;
-}
-
 .btn-close {
   border: none;
   font-size: 20px;

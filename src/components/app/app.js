@@ -1,7 +1,6 @@
-import Todos from '../todos/todos.vue';
+import Tasks from '../tasks/tasks.vue';
 
 export default {
-  components: { Todos },
-  data () { },
+  components: { Tasks },
   methods: { }
 };
