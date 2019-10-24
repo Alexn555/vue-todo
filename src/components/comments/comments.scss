@@ -1,0 +1,25 @@
+@import '../themes/theme-main';
+
+.comments {
+  @extend .common-section;
+  background-color: #B8B8B8;
+  border: 1px;
+  padding: 15px;
+  width: 92%;
+  list-style-type: none;
+}
+
+.comment-author {
+  padding: 10px;
+  color: black;
+}
+
+.comment-body {
+  padding: 10px;
+}
+
+.comment-date {
+  padding: 10px;
+  color: white;
+  font-style: italic;
+}

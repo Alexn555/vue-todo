@@ -1,0 +1,11 @@
+{
+  "root": true,
+  "extends": [
+     "plugin:vue-libs/recommended"
+  ],
+  "rules": {
+    "strict": "off",
+    "no-trailing-spaces": ["error", { "skipBlankLines": true, "ignoreComments": true }],
+    "semi": ["error", "always"]
+  }
+}
