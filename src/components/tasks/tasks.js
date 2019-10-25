@@ -18,8 +18,9 @@ export default {
 
   methods: {
     addTask (e) {
-      const title = e.target.value;
-      if (title.trim()) {
+      let title = e.target.value;
+      title = title.trim();
+      if (title.length > 3 && title.length < 50) {
         const addObj = {
           title: title,
           description: '',
@@ -28,6 +29,8 @@ export default {
           comments: []
         };
         this.$store.dispatch('addTask', addObj);
+      } else {
+        alert('Title must be between 3 and 50 chars');
       }
       e.target.value = '';
     },

@@ -1,5 +1,6 @@
 import { mapActions } from 'vuex';
 import { createDate } from '../../utils/date';
+import { isInputLengthCorrect } from '../../utils/validator';
 
 export default {
   name: 'Comments',
@@ -21,14 +22,22 @@ export default {
     onAddComment (e) {
       const { taskItem } = this;
       if (taskItem && taskItem.id) {
-        const commentObj = {
-          taskId: this.taskItem.id,
-          author: this.commentAuthor,
-          comment: this.commentBody,
-          commentDate: createDate()
-        };
-        this.addComment(commentObj);
-        this.clearFields();
+        let error = isInputLengthCorrect(this.commentAuthor, 'Author', 2, 30);
+        if (error === '') {
+          error = isInputLengthCorrect(this.commentBody, 'Comment body', 2, 100);
+        }
+        if (error === '') {
+          const commentObj = {
+            taskId: this.taskItem.id,
+            author: this.commentAuthor,
+            comment: this.commentBody,
+            commentDate: createDate()
+          };
+          this.addComment(commentObj);
+          this.clearFields();
+        } else {
+          alert('Comment error ' + error);
+        }
       }
     },
     clearFields () {

@@ -1,5 +1,6 @@
 import { mapActions } from 'vuex';
 import MaskedInput from 'vue-masked-input';
+import { isInputLengthCorrect, isCorrectDate } from '../../utils/validator';
 
 export default {
   name: 'TaskForm',
@@ -30,9 +31,9 @@ export default {
       this.$emit('close');
     },
     saveTask: function () {
-      if (this.isValidForm(this.title, this.description)) {
+      const error = this.isValidForm(this.title, this.description, this.todoDate);
+      if (error === '') {
         const methodType = this.modalType === 'add' ? 'addTask' : 'editTask';
-
         if (this.modalType === 'edit') {
           const task = this.formObject;
           const id = task.id;
@@ -52,13 +53,25 @@ export default {
           this.$store.dispatch(methodType, addObj);
         }
         this.close();
+      } else {
+        alert('Error ' + error);
       }
     },
-    isValidForm: function (title, description) {
+    isValidForm: function (title, description, todoDate) {
+      let error = '';
       if (!title || !description) { // only obligatory values
-        return false;
+        error = 'No title or description set!';
       }
-      return true;
+      if (error === '') {
+        error = isInputLengthCorrect(title, 'Title', 3, 50);
+      }
+      if (error === '') {
+        error = isInputLengthCorrect(description, 'Description', 3, 100);
+      }
+      if (error === '') {
+        error = isCorrectDate(todoDate);
+      }
+      return error;
     }
   }
 };
